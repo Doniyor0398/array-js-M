@@ -1,11 +1,9 @@
 function sumAmounts(arr) {
-    let sumObj = 0;
-    arr.forEach((numObj) => {
-        sumObj += numObj.amount;
+    let sum = 0;
+    arr.forEach((num) => {
+        sum += num.amount;
     });
-    return sumObj;
+    return sum;
 }
-
-// Пример использования:
 const purchases = [{ amount: 50 }, { amount: 75 }, { amount: 100 }];
-console.log(sumAmounts(purchases)); // 225
+console.log(sumAmounts(purchases));

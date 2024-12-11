@@ -1,21 +1,28 @@
-function groupByAge(arr, age) {
-    return arr.reduce((grouped, items) => {
-        const groupAge = items[age];
-        if (!grouped[groupAge]) {
-            grouped[groupAge] = [];
+function groupBy(arr, key) {
+    return arr.reduce((grouped, item) => {
+        const groupKey = item[key];
+        if (!grouped[groupKey]) {
+            grouped[groupKey] = [];
         }
-        grouped[groupAge].push(items);
-        console.log(grouped[groupAge], " grouped[groupAge]");
-        console.log(grouped, " grouped");
+        grouped[groupKey].push(item);
         return grouped;
     }, {});
 }
 
-const people = [
-    { name: "Alice", age: 25 },
-    { name: "Bob", age: 30 },
-    { name: "Charlie", age: 25 },
-    { name: "David", age: 30 },
-    { name: "Eve", age: 35 },
+// Пример использования:
+const items = [
+    { category: "fruit", name: "apple" },
+    { category: "fruit", name: "banana" },
+    { category: "vegetable", name: "carrot" },
 ];
-console.log(groupByAge(people, "age"));
+
+console.log(groupBy(items, "category"));
+/*
+{
+    fruit: [
+        { category: 'fruit', name: 'apple' }, 
+        { category: 'fruit', name: 'banana' }
+    ],
+    vegetable: [{ category: 'vegetable', name: 'carrot' }]
+}
+*/

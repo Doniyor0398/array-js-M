@@ -1,4 +1,5 @@
-function sortName(arr) {
+function sortByName(arr) {
     return arr.sort((a, b) => a.name.localeCompare(b.name));
 }
-console.log(sortName([{ name: "Zara" }, { name: "Mia" }, { name: "Anna" }]));
+const people = [{ name: "Charlie" }, { name: "Alice" }, { name: "Bob" }];
+console.log(sortByName(people));
